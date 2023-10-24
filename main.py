@@ -7,8 +7,8 @@ text_gpt = ft.TextField(label="GPT Text", color="#A78B71", multiline=True, max_l
 
 def create_row_1():
     container = ft.Container(
-        width=200,
-        height=200,
+        width=300,
+        height=500,
         content=tf_user,
         padding = ft.Padding(20,20,20,20),
     )
@@ -34,13 +34,13 @@ def create_row_3():
 def main(page: ft.Page):
     page.title ="FletGPT"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.bgcolor = "#E0EFEA"
+    page.bgcolor = "#dbe8f1"
     page.window_maximized = True
 
     r1 = create_row_1()
 
     def click_button(e):
-        from gpt_core import send_request
+        from GPT_Core import send_request
         text_gpt.value = send_request(tf_user.value)
         text_gpt.update()
         page.update()
