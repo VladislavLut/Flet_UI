@@ -3,21 +3,21 @@ import flet as ft
 
 
 tf_user = ft.TextField(label="User Input", width=500, height=300, multiline=True, max_lines=15, min_lines=9, border_radius=55)
-text_gpt = ft.TextField(label="GPT Text", color="#677C77", multiline=True, max_lines=10, min_lines=15, border_radius=25, width=1500, height=500)
+text_gpt = ft.TextField(label="GPT Text", color="#A78B71", multiline=True, max_lines=10, min_lines=15, border_radius=25, width=1500, height=500)
 
 def create_row_1():
     container = ft.Container(
-        width=300,
-        height=500,
+        width=200,
+        height=200,
         content=tf_user,
         padding = ft.Padding(20,20,20,20),
     )
 
     card = ft.Card(
         elevation=15,
-        color="#8EA076",
+        color="#63719C",
         width=1500,
-        height=300,
+        height=100,
         content=container,
     )
     return ft.Row([
@@ -45,7 +45,7 @@ def main(page: ft.Page):
         text_gpt.update()
         page.update()
 
-    bt = ft.ElevatedButton(text="Send", color="#677C77", width=350, height=50, elevation=10, on_click=click_button)
+    bt = ft.OutlinedButton(text="Send", width=350, height=50, on_click=click_button)
     row = ft.Row([
         bt,
     ],
